@@ -1,0 +1,1397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71AABC1D-6183-4308-84E2-ADFD6DB2C881}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LazyShell</RootNamespace>
+    <AssemblyName>1-up-Workshop-V1</AssemblyName>
+    <StartupObject>LazyShell.Program</StartupObject>
+    <ApplicationIcon>1up Workshop.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <ReleaseVersion>4.0.2</ReleaseVersion>
+    <PublishUrl>D:\Coding\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5476D9CD6A1F688415C61B226F701E88A3D469EF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LazyShell_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>.\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\StatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\StatsForm.Designer.cs">
+      <DependentUpon>StatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Updater.cs" />
+    <Compile Include="Battlefields\Updater.cs" />
+    <Compile Include="Dialogues\DTETableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\DTETableForm.Designer.cs">
+      <DependentUpon>DTETableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\Updater.cs" />
+    <Compile Include="Effects\Updater.cs" />
+    <Compile Include="Fonts\Updater.cs" />
+    <Compile Include="Intro\Updater.cs" />
+    <Compile Include="Minecart\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Minecart\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="_Generic\LineSeparator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Generic\LineSeparator.Designer.cs">
+      <DependentUpon>LineSeparator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Updater.cs" />
+    <Compile Include="Minecart\Updater.cs" />
+    <Compile Include="Sprites\Updater.cs" />
+    <Compile Include="WorldMaps\Updater.cs" />
+    <Compile Include="_Features\ByteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\ByteEditor.Designer.cs">
+      <DependentUpon>ByteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\OpacityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\OpacityForm.Designer.cs">
+      <DependentUpon>OpacityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Generic\MapEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Generic\Updater.cs" />
+    <Compile Include="_Static\Do.Coloring.cs" />
+    <Compile Include="_Static\Do.Controls.cs" />
+    <Compile Include="_Static\Do.Drawing.cs" />
+    <Compile Include="_Static\Do.IO.cs" />
+    <Compile Include="_Static\Do.Text.cs" />
+    <Compile Include="Animations\Model.cs" />
+    <Compile Include="Areas\Model.cs" />
+    <Compile Include="Attacks\Model.cs" />
+    <Compile Include="Audio\Model.cs" />
+    <Compile Include="Battlefields\Model.cs" />
+    <Compile Include="Dialogues\Model.cs" />
+    <Compile Include="Dialogues\Parser.cs" />
+    <Compile Include="Effects\Model.cs" />
+    <Compile Include="EventScripts\Command.cs" />
+    <Compile Include="EventScripts\Model.cs" />
+    <Compile Include="Fonts\Model.cs" />
+    <Compile Include="Formations\Model.cs" />
+    <Compile Include="Intro\Model.cs" />
+    <Compile Include="Items\Model.cs" />
+    <Compile Include="LevelUps\LevelUp.cs" />
+    <Compile Include="LevelUps\Model.cs" />
+    <Compile Include="Magic\Model.cs" />
+    <Compile Include="Menus\MenuCursorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\MenuCursorForm.Designer.cs">
+      <DependentUpon>MenuCursorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\MenuTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\MenuTextForm.Designer.cs">
+      <DependentUpon>MenuTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Model.cs" />
+    <Compile Include="Minecart\Model.cs" />
+    <Compile Include="Monsters\Model.cs" />
+    <Compile Include="NewGame\Ally.cs" />
+    <Compile Include="_Static\BRR.cs" />
+    <Compile Include="_Static\Enums.cs" />
+    <Compile Include="_Static\Help.cs" />
+    <Compile Include="_Static\NewCursors.cs" />
+    <Compile Include="_Generic\Element.cs" />
+    <Compile Include="_Generic\History.cs" />
+    <Compile Include="_Generic\Tilemap.cs" />
+    <Compile Include="_Generic\ToolTipLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animations\CommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animations\CommandForm.Designer.cs">
+      <DependentUpon>CommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\InstrumentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\InstrumentsForm.Designer.cs">
+      <DependentUpon>InstrumentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Static\Icons.cs" />
+    <Compile Include="Audio\Music.cs" />
+    <Compile Include="Audio\PickInstruments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\PickInstruments.Designer.cs">
+      <DependentUpon>PickInstruments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\Parser.cs" />
+    <Compile Include="Audio\PickNativeSPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\PickNativeSPC.Designer.cs">
+      <DependentUpon>PickNativeSPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\SamplesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\SamplesForm.Designer.cs">
+      <DependentUpon>SamplesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animations\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animations\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\BRRSample.cs" />
+    <Compile Include="Audio\ScoreWriterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\ScoreWriterForm.Designer.cs">
+      <DependentUpon>ScoreWriterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\SPCSound.cs" />
+    <Compile Include="Audio\SPC.cs" />
+    <Compile Include="Audio\SPCTrack.cs" />
+    <Compile Include="Audio\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\Command.cs" />
+    <Compile Include="Audio\ScriptEnums.cs" />
+    <Compile Include="Audio\ScoreViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\ScoreViewerForm.Designer.cs">
+      <DependentUpon>ScoreViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Audio\TrackViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\TrackViewerForm.Designer.cs">
+      <DependentUpon>TrackViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\DialoguesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\DialoguesForm.Designer.cs">
+      <DependentUpon>DialoguesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\PropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Effects\PropertiesForm.Designer.cs">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScripts\CommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventScripts\CommandForm.Designer.cs">
+      <DependentUpon>CommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScripts\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventScripts\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formations\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formations\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intro\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intro\PreGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro\PreGameForm.Designer.cs">
+      <DependentUpon>PreGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\EventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\EventsForm.Designer.cs">
+      <DependentUpon>EventsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ExitsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\ExitsForm.Designer.cs">
+      <DependentUpon>ExitsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\LayeringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\LayeringForm.Designer.cs">
+      <DependentUpon>LayeringForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\MapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\MapForm.Designer.cs">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\NPCsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\NPCsForm.Designer.cs">
+      <DependentUpon>NPCsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\OverlapsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\OverlapsForm.Designer.cs">
+      <DependentUpon>OverlapsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PriorityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\PriorityForm.Designer.cs">
+      <DependentUpon>PriorityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\PropertiesForm.Designer.cs">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CollisionSwitchesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\CollisionSwitchesForm.Designer.cs">
+      <DependentUpon>CollisionSwitchesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TileSwitchesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\TileSwitchesForm.Designer.cs">
+      <DependentUpon>TileSwitchesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Texts.cs" />
+    <Compile Include="Menus\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Minecart\MinecartData.cs" />
+    <Compile Include="Minecart\ScreensForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Minecart\ScreensForm.Designer.cs">
+      <DependentUpon>ScreensForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Minecart\ObjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Minecart\ObjectsForm.Designer.cs">
+      <DependentUpon>ObjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Minecart\Mode7Tilemap.cs" />
+    <Compile Include="Minecart\SideTilemap.cs" />
+    <Compile Include="Monsters\BattleScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monsters\BattleScriptForm.Designer.cs">
+      <DependentUpon>BattleScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\DTE.cs" />
+    <Compile Include="Areas\Classes\CollisionSwitchCollection.cs" />
+    <Compile Include="Areas\Classes\TileSwitchCollection.cs" />
+    <Compile Include="Monsters\CommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monsters\CommandForm.Designer.cs">
+      <DependentUpon>CommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monsters\Parser.cs" />
+    <Compile Include="Monsters\MonstersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monsters\MonstersForm.Designer.cs">
+      <DependentUpon>MonstersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monsters\SpriteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monsters\SpriteForm.Designer.cs">
+      <DependentUpon>SpriteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewGame\Model.cs" />
+    <Compile Include="Shops\Model.cs" />
+    <Compile Include="Sprites\CoordAdjustForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\CoordAdjustForm.Designer.cs">
+      <DependentUpon>CoordAdjustForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprites\Model.cs" />
+    <Compile Include="Sprites\NPCPacket.cs" />
+    <Compile Include="Sprites\PropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\PropertiesForm.Designer.cs">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMaps\LocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMaps\LocationsForm.Designer.cs">
+      <DependentUpon>LocationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMaps\Model.cs" />
+    <Compile Include="WorldMaps\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMaps\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Editors\BaseConvertorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Editors\BaseConvertorForm.Designer.cs">
+      <DependentUpon>BaseConvertorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SearchNPCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\SearchNPCForm.Designer.cs">
+      <DependentUpon>SearchNPCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\FindReferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\FindReferences.Designer.cs">
+      <DependentUpon>FindReferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\TextBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\TextBoxForm.Designer.cs">
+      <DependentUpon>TextBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ProjectDB.cs" />
+    <Compile Include="Undo\UndoEdits.cs" />
+    <Compile Include="_Features\AnimatedGifEncoder.cs" />
+    <Compile Include="_Features\EditLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\EditLabel.Designer.cs">
+      <DependentUpon>EditLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\LZWEncoder.cs" />
+    <Compile Include="_Features\NeuQuant.cs" />
+    <Compile Include="_Features\NewExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\NewExceptionForm.Designer.cs">
+      <DependentUpon>NewExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\NewMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\NewMessageBox.Designer.cs">
+      <DependentUpon>NewMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Generic\ToolStripControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Features\HackingTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\HackingTools.Designer.cs">
+      <DependentUpon>HackingTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\ExportImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\ExportImages.Designer.cs">
+      <DependentUpon>ExportImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Editors\HexEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Editors\HexEditor.designer.cs">
+      <DependentUpon>HexEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\IOArchitecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\IOArchitecture.Designer.cs">
+      <DependentUpon>IOArchitecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Generic\ListViewColumnSorter.cs" />
+    <Compile Include="_Generic\NewControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Features\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\StatusCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\StatusCalculator.Designer.cs">
+      <DependentUpon>StatusCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\ZoomBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\ZoomBox.Designer.cs">
+      <DependentUpon>ZoomBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\Preview.cs" />
+    <Compile Include="NewGame\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGame\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelUps\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelUps\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attacks\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attacks\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magic\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Magic\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Battlefields\Serialized.cs" />
+    <Compile Include="_Generic\CopyBuffer.cs" />
+    <Compile Include="Dialogues\BattleDialoguesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\BattleDialoguesForm.Designer.cs">
+      <DependentUpon>BattleDialoguesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonts\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonts\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fonts\NewFontTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonts\NewFontTable.Designer.cs">
+      <DependentUpon>NewFontTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\MoldsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Effects\MoldsForm.Designer.cs">
+      <DependentUpon>MoldsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Effects\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\SequencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Effects\SequencesForm.Designer.cs">
+      <DependentUpon>SequencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shops\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shops\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formations\PacksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formations\PacksForm.Designer.cs">
+      <DependentUpon>PacksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formations\FormationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formations\FormationsForm.Designer.cs">
+      <DependentUpon>FormationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monsters\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monsters\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Static\Bits.cs" />
+    <Compile Include="_Static\Comp.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Features\IOElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\IOElements.Designer.cs">
+      <DependentUpon>IOElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Battlefields\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Battlefields\OwnerForm.Designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Editors\GraphicEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Editors\GraphicEditor.Designer.cs">
+      <DependentUpon>GraphicEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\CollisionTileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\CollisionTileForm.Designer.cs">
+      <DependentUpon>CollisionTileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ChunksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\ChunksForm.Designer.cs">
+      <DependentUpon>ChunksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TilemapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\TilemapForm.Designer.cs">
+      <DependentUpon>TilemapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\TilesetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\TilesetForm.Designer.cs">
+      <DependentUpon>TilesetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Editors\PaletteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Editors\PaletteEditor.Designer.cs">
+      <DependentUpon>PaletteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Classes\Collision.cs" />
+    <Compile Include="_Editors\TileEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Editors\TileEditor.Designer.cs">
+      <DependentUpon>TileEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Classes\OverlapCollection.cs" />
+    <Compile Include="Areas\Classes\NPCProperties.cs" />
+    <Compile Include="Areas\Classes\SpriteParitioning.cs" />
+    <Compile Include="Areas\SpritePartitionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\SpritePartitionsForm.Designer.cs">
+      <DependentUpon>SpritePartitionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Generic\PaletteSet.cs" />
+    <Compile Include="Areas\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\OwnerForm.designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Classes\EventTriggerCollection.cs" />
+    <Compile Include="Areas\Classes\ExitTriggerCollection.cs" />
+    <Compile Include="Areas\Classes\Layering.cs" />
+    <Compile Include="Battlefields\Battlefield.cs" />
+    <Compile Include="Areas\Classes\Area.cs" />
+    <Compile Include="Areas\Classes\Map.cs" />
+    <Compile Include="Areas\Classes\NPCObjectCollection.cs" />
+    <Compile Include="_Generic\Overlay.cs" />
+    <Compile Include="Areas\Classes\PrioritySet.cs" />
+    <Compile Include="Areas\NPCEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\NPCEditor.Designer.cs">
+      <DependentUpon>NPCEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SearchCollisionTileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\SearchCollisionTileForm.Designer.cs">
+      <DependentUpon>SearchCollisionTileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Classes\Serialized.cs" />
+    <Compile Include="Areas\SpaceAnalyzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Areas\SpaceAnalyzer.Designer.cs">
+      <DependentUpon>SpaceAnalyzer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Battlefields\Tileset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Classes\OverlapTileset.cs" />
+    <Compile Include="Areas\Classes\CollisionMap.cs" />
+    <Compile Include="Areas\Classes\CollisionTile.cs" />
+    <Compile Include="_Generic\Tile.cs" />
+    <Compile Include="_Generic\Subtile.cs" />
+    <Compile Include="Areas\Classes\AreaTilemap.cs" />
+    <Compile Include="Areas\Classes\OverlapTile.cs" />
+    <Compile Include="_Generic\Tileset.cs" />
+    <Compile Include="Areas\Classes\Chunk.cs" />
+    <Compile Include="_Static\Lists.cs" />
+    <Compile Include="Intro\TitleScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro\TitleScreenForm.Designer.cs">
+      <DependentUpon>TitleScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs" />
+    <Compile Include="MRUManager.cs" />
+    <Compile Include="Project\ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\NotesDB.cs" />
+    <Compile Include="Patches\GamePatches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patches\GamePatches.designer.cs">
+      <DependentUpon>GamePatches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patches\IPSPatch.cs" />
+    <Compile Include="Patches\Patch.cs" />
+    <Compile Include="Dialogues\MenuTextPreview.cs" />
+    <Compile Include="_Features\Previewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\Previewer.Designer.cs">
+      <DependentUpon>Previewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprites\NPCPacketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\NPCPacketsForm.Designer.cs">
+      <DependentUpon>NPCPacketsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramController.cs" />
+    <Compile Include="_Features\ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Areas\StatsForm.resx">
+      <DependentUpon>StatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\DTETableForm.resx">
+      <DependentUpon>DTETableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Minecart\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\ByteEditor.resx">
+      <DependentUpon>ByteEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\OpacityForm.resx">
+      <DependentUpon>OpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Generic\ToolTipLabel.resx">
+      <DependentUpon>ToolTipLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animations\CommandForm.resx">
+      <DependentUpon>CommandForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\InstrumentsForm.resx">
+      <DependentUpon>InstrumentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\PickInstruments.resx">
+      <DependentUpon>PickInstruments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\PickNativeSPC.resx">
+      <DependentUpon>PickNativeSPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\ScoreWriterForm.resx">
+      <DependentUpon>ScoreWriterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\ScoreViewerForm.resx">
+      <DependentUpon>ScoreViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audio\TrackViewerForm.resx">
+      <DependentUpon>TrackViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\DialoguesForm.resx">
+      <DependentUpon>DialoguesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Effects\PropertiesForm.resx">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScripts\CommandForm.resx">
+      <DependentUpon>CommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventScripts\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formations\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro\PreGameForm.resx">
+      <DependentUpon>PreGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\EventsForm.resx">
+      <DependentUpon>EventsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ExitsForm.resx">
+      <DependentUpon>ExitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\LayeringForm.resx">
+      <DependentUpon>LayeringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\MapForm.resx">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\NPCsForm.resx">
+      <DependentUpon>NPCsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\OverlapsForm.resx">
+      <DependentUpon>OverlapsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PriorityForm.resx">
+      <DependentUpon>PriorityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\PropertiesForm.resx">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\CollisionSwitchesForm.resx">
+      <DependentUpon>CollisionSwitchesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\TileSwitchesForm.resx">
+      <DependentUpon>TileSwitchesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\MenuCursorForm.resx">
+      <DependentUpon>MenuCursorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\MenuTextForm.resx">
+      <DependentUpon>MenuTextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Minecart\ScreensForm.resx">
+      <DependentUpon>ScreensForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Minecart\ObjectsForm.resx">
+      <DependentUpon>ObjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monsters\CommandForm.resx">
+      <DependentUpon>CommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monsters\MonstersForm.resx">
+      <DependentUpon>MonstersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monsters\SpriteForm.resx">
+      <DependentUpon>SpriteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\PropertiesForm.resx">
+      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMaps\LocationsForm.resx">
+      <DependentUpon>LocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMaps\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Editors\BaseConvertorForm.resx">
+      <DependentUpon>BaseConvertorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SearchNPCForm.resx">
+      <DependentUpon>SearchNPCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\FindReferences.resx">
+      <DependentUpon>FindReferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\TextBoxForm.resx">
+      <DependentUpon>TextBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\EditLabel.resx">
+      <DependentUpon>EditLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\NPCPacketsForm.resx">
+      <DependentUpon>NPCPacketsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Form1.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="LazyShell_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>
+      </SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="_Features\Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventScripts\ActionScript.cs" />
+    <Compile Include="Animations\Script.cs" />
+    <Compile Include="Animations\Command.cs" />
+    <Compile Include="Animations\ScriptEnums.cs" />
+    <Compile Include="Animations\TreeViewWrapper.cs">
+    </Compile>
+    <Compile Include="Animations\Parser.cs" />
+    <Compile Include="Monsters\BattleScript.cs" />
+    <Compile Include="EventScripts\ActionCommand.cs" />
+    <Compile Include="Monsters\Command.cs" />
+    <Compile Include="_Generic\Command.cs" />
+    <Compile Include="EventScripts\Parser.Action.cs" />
+    <Compile Include="EventScripts\EventCommand.cs" />
+    <Compile Include="EventScripts\Parser.Event.cs" />
+    <Compile Include="EventScripts\ScriptIterator.cs" />
+    <Compile Include="EventScripts\EventScript.cs" />
+    <Compile Include="EventScripts\TreeViewWrapper.cs">
+    </Compile>
+    <Compile Include="EventScripts\ScriptEnums.cs" />
+    <Compile Include="_Generic\Settings.cs" />
+    <Compile Include="_Features\ClearElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Features\ClearElements.Designer.cs">
+      <DependentUpon>ClearElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Static\Do.Misc.cs" />
+    <Compile Include="Dialogues\BattleDialogueTileset.cs" />
+    <Compile Include="Dialogues\Tileset.cs" />
+    <Compile Include="Effects\Effect.cs" />
+    <Compile Include="Effects\Animation.cs" />
+    <Compile Include="Effects\Mold.cs" />
+    <Compile Include="Effects\Sequence.cs" />
+    <Compile Include="Effects\Tileset.cs" />
+    <Compile Include="Sprites\MoldsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\MoldsForm.Designer.cs">
+      <DependentUpon>MoldsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprites\SequencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\SequencesForm.Designer.cs">
+      <DependentUpon>SequencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMaps\Location.cs" />
+    <Compile Include="WorldMaps\WorldMap.cs" />
+    <Compile Include="Menus\Tileset.cs" />
+    <Compile Include="Sprites\Mold.cs" />
+    <Compile Include="Sprites\Sequence.cs" />
+    <Compile Include="Sprites\Sprite.cs" />
+    <Compile Include="Sprites\ImagePacket.cs" />
+    <Compile Include="Sprites\OwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\OwnerForm.designer.cs">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprites\Animation.cs" />
+    <Compile Include="_Static\State.cs" />
+    <Compile Include="Dialogues\BattleDialoguePreview.cs" />
+    <Compile Include="Dialogues\DescriptionPreview.cs" />
+    <Compile Include="Attacks\Attack.cs" />
+    <Compile Include="NewGame\NewGame.cs" />
+    <Compile Include="Formations\Formation.cs" />
+    <Compile Include="Formations\Pack.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Monsters\Monster.cs" />
+    <Compile Include="Shops\Shop.cs" />
+    <Compile Include="Magic\Spell.cs" />
+    <Compile Include="_Generic\SortedList.cs" />
+    <Compile Include="Dialogues\DialoguePreview.cs" />
+    <Compile Include="Dialogues\BattleDialogue.cs" />
+    <Compile Include="Dialogues\Dialogue.cs" />
+    <Compile Include="Dialogues\ParserMain.cs">
+    </Compile>
+    <Compile Include="Dialogues\ParserReduced.cs" />
+    <Compile Include="Fonts\Glyph.cs" />
+    <Compile Include="Undo\Edit.cs" />
+    <Compile Include="Undo\UndoStack.cs" />
+    <Compile Include="Undo\SolidityEdit.cs" />
+    <Compile Include="Undo\TilemapEdit.cs" />
+    <Compile Include="WorldMaps\WorldMapsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMaps\WorldMapsForm.Designer.cs">
+      <DependentUpon>WorldMapsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsEditor.Designer.cs">
+      <DependentUpon>SettingsEditor.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help\LAZYSHELL_html.html" />
+    <None Include="Resources\Lunar Compress x64.dll" />
+    <None Include="Resources\toggleScreens.png" />
+    <None Include="Resources\toggleTilesetL3.png" />
+    <None Include="Resources\toggleTilesetL2.png" />
+    <None Include="Resources\toggleTilesetL1.png" />
+    <None Include="Resources\statistics.png" />
+    <None Include="Resources\table.png" />
+    <None Include="Resources\toggleFontBorder.png" />
+    <None Include="Resources\replace.png" />
+    <None Include="Resources\find-references.png" />
+    <None Include="Resources\toggleMonsterSprite.png" />
+    <None Include="Resources\togglePriority.png" />
+    <None Include="Resources\toggleMap.png" />
+    <None Include="Resources\toggleCollisionSwitches.png" />
+    <None Include="Resources\toggleTileSwitches.png" />
+    <None Include="Resources\toggleOverlaps.png" />
+    <None Include="Resources\toggleEvents.png" />
+    <None Include="Resources\toggleExits.png" />
+    <None Include="Resources\toggleNPCs.png" />
+    <None Include="Resources\toggleLayering.png" />
+    <None Include="Resources\inactive.png" />
+    <None Include="Resources\hideMonster.png" />
+    <None Include="Resources\commandTree.png" />
+    <None Include="Resources\trackViewer.png" />
+    <None Include="Resources\_canvas.png" />
+    <None Include="Resources\Forms\uncheckAll.png" />
+    <None Include="Resources\Forms\checkAll.png" />
+    <None Include="Resources\Music\tieOver.png" />
+    <None Include="Resources\Music\tieUnder.png" />
+    <EmbeddedResource Include="Audio\SamplesForm.resx">
+      <DependentUpon>SamplesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animations\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monsters\BattleScriptForm.resx">
+      <DependentUpon>BattleScriptForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\CoordAdjustForm.resx">
+      <DependentUpon>CoordAdjustForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\HackingTools.resx">
+      <DependentUpon>HackingTools.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\ExportImages.resx">
+      <DependentUpon>ExportImages.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Editors\HexEditor.resx">
+      <DependentUpon>HexEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\IOArchitecture.resx">
+      <DependentUpon>IOArchitecture.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\NewExceptionForm.resx">
+      <DependentUpon>NewExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\NewMessageBox.resx">
+      <DependentUpon>NewMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\StatusCalculator.resx">
+      <DependentUpon>StatusCalculator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\ZoomBox.resx">
+      <DependentUpon>ZoomBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGame\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelUps\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attacks\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Magic\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\BattleDialoguesForm.resx">
+      <DependentUpon>BattleDialoguesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonts\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonts\NewFontTable.resx">
+      <DependentUpon>NewFontTable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Effects\MoldsForm.resx">
+      <DependentUpon>MoldsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Effects\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Effects\SequencesForm.resx">
+      <DependentUpon>SequencesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shops\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formations\PacksForm.resx">
+      <DependentUpon>PacksForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formations\FormationsForm.resx">
+      <DependentUpon>FormationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monsters\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Cursors\CursorDraw.cur" />
+    <None Include="Resources\Cursors\CursorErase.cur" />
+    <EmbeddedResource Include="_Features\IOElements.resx">
+      <DependentUpon>IOElements.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Battlefields\OwnerForm.resx">
+      <DependentUpon>OwnerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Editors\GraphicEditor.resx">
+      <DependentUpon>GraphicEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\CollisionTileForm.resx">
+      <DependentUpon>CollisionTileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\ChunksForm.resx">
+      <DependentUpon>ChunksForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\TilemapForm.resx">
+      <DependentUpon>TilemapForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\TilesetForm.resx">
+      <DependentUpon>TilesetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SpritePartitionsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SpritePartitionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Editors\PaletteEditor.resx">
+      <DependentUpon>PaletteEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\NPCEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NPCEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SearchCollisionTileForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SearchCollisionTileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SpaceAnalyzer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SpaceAnalyzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Editors\TileEditor.resx">
+      <DependentUpon>TileEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro\TitleScreenForm.resx">
+      <DependentUpon>TitleScreenForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patches\GamePatches.resx">
+      <DependentUpon>GamePatches.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\Previewer.resx">
+      <DependentUpon>Previewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\ProgressBar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\Cursors\CursorDropper.cur" />
+    <None Include="Resources\Cursors\CursorZoomIn.cur" />
+    <None Include="Resources\Cursors\CursorZoomOut.cur" />
+    <EmbeddedResource Include="_Features\Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Features\ClearElements.resx">
+      <DependentUpon>ClearElements.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\MoldsForm.resx">
+      <DependentUpon>MoldsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\SequencesForm.resx">
+      <DependentUpon>SequencesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Cursors\CursorTemplate.cur" />
+    <EmbeddedResource Include="WorldMaps\WorldMapsForm.resx">
+      <DependentUpon>WorldMapsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsEditor.resx">
+      <DependentUpon>SettingsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Cursors\CursorFill.cur" />
+    <Content Include="1up Workshop.ico" />
+    <Content Include="Patches\PatchFormat.txt" />
+    <None Include="Resources\RomPreviewBaseSave.000" />
+    <None Include="Resources\RomPreviewBaseSave.zst" />
+    <None Include="Resources\Lunar Compress.dll" />
+    <None Include="Resources\LAZYSHELL_icon.ico" />
+    <None Include="Resources\Help\LAZYSHELL_css.css" />
+    <None Include="Resources\Help\LAZYSHELL_xml.xml" />
+    <None Include="Resources\Help\LAZYSHELL_xsl.xsl" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Data\" />
+    <Folder Include="Resources\Dialog\" />
+    <Folder Include="Resources\Draw\" />
+    <Folder Include="Resources\Editor\" />
+    <Folder Include="Resources\Main\" />
+    <Folder Include="Resources\Tiles\" />
+    <Folder Include="Resources\Toggle\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
